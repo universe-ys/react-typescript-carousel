@@ -1,46 +1,179 @@
-# Getting Started with Create React App
+`npx create-react-app carousel --template typescript` 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`npm i react-reponsive-carousel react-slick @types/react-slick antd`
 
-## Available Scripts
+# React-responsive-carousel
 
-In the project directory, you can run:
+[https://www.npmjs.com/package/react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel)
 
-### `npm start`
+```tsx
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+const Responsive = () => {
+  return (
+    <Carousel infiniteLoop>
+      <div style={{
+        height: 300,
+        background: "red",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>hello1</div>
+      <div style={{
+        height: 300,
+        background: "green",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>hello2</div>
+      <div style={{
+        height: 300,
+        background: "yellow",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>hello3</div>
+    </Carousel>
+  );
+}
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+export default Responsive;
+```
 
-### `npm test`
+# React-slick
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://github.com/akiran/react-slick
 
-### `npm run build`
+`npm install slick-carousel`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```tsx
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const Slick = () => {
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
 
-### `npm run eject`
+  return (
+    <Slider {...settings}>
+      <div>
+        <h3 style={{ 
+          height: 300, 
+          background: "blue", 
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>1</h3>
+      </div>
+      <div>
+        <h3 style={{ 
+          height: 300, 
+          background: "purple", 
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>2</h3>
+      </div>
+      <div>
+        <h3 style={{ 
+          height: 300, 
+          background: "pink", 
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>3</h3>
+      </div>
+      <div>
+        <h3 style={{ 
+          height: 300, 
+          background: "orange", 
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>4</h3>
+      </div>
+      <div>
+        <h3 style={{ 
+          height: 300, 
+          background: "brown", 
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>5</h3>
+      </div>
+      <div>
+        <h3 style={{ 
+          height: 300, 
+          background: "black", 
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>6</h3>
+      </div>
+    </Slider>
+  );
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+export default Slick;
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Ant.design
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[https://ant.design/](https://ant.design/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```tsx
+import 'antd/dist/antd.css';
+import { Carousel } from 'antd';
 
-## Learn More
+const Antd = () => {
+  return (
+    <Carousel style={{ width: 500 }}>
+      <div>
+        <div style={{
+          height: '160px',
+          color: '#fff',
+          lineHeight: '160px',
+          textAlign: 'center',
+          background: '#364d79',
+        }} >1</div>
+      </div>
+      <div>
+        <div style={{
+          height: '160px',
+          color: '#fff',
+          lineHeight: '160px',
+          textAlign: 'center',
+          background: '#364d79',
+        }}>2</div>
+      </div>
+      <div>
+        <div style={{
+          height: '160px',
+          color: '#fff',
+          lineHeight: '160px',
+          textAlign: 'center',
+          background: '#364d79',
+        }}>3</div>
+      </div>
+    </Carousel>
+  );
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+export default Antd;
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# css in js 로 캐러셀 만들기
